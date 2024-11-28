@@ -1,6 +1,6 @@
 /* NAVBAR */
 .nav {
-    top: 0;
+    top: 0px;
     z-index: 10;
     position: sticky;
     backdrop-filter: blur(20px);
@@ -38,6 +38,10 @@
             }
         }
 
+        .menu {
+            display: none;
+        }
+
         .nav-ul {
             width: 50%;
             display: flex;
@@ -59,6 +63,39 @@
                         background-color: lime;
                         box-shadow: 0 0 5px lime;
                     }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .nav-bar {
+            position: relative;
+
+            .menu {
+                display: flex;
+                height: 6vh;
+                border-radius: 5px;
+                background-color: var(--medium-light);
+            }
+
+            .nav-ul {
+                right: 0;
+                top: calc(8vh - 1px);
+                position: absolute;
+                flex-direction: column;
+                transform: translateX(105%);
+                border-left: 2px solid var(--dark-gray);
+                border-bottom: 2px solid var(--dark-gray);
+                border-bottom-left-radius: 15px;
+                background-color: rgba(0, 0, 0, 0.55);
+                transition: all .3s ease-in-out;
+                &.show {
+                    transform: translateX(5vw);
+                }
+                .nav-li {
+                    padding: 5px 0;
+                    margin: 5px 0;
                 }
             }
         }

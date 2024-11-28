@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
+import menu from "../assets/menu-bar.png";
 
 class Navbar extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class Navbar extends React.Component {
 
     this.state = {
       activelink: "/",
+      display: false
     }
   }
   componentDidMount() {
@@ -21,6 +23,15 @@ class Navbar extends React.Component {
       return {
         ...prevState,
         activelink: isWeekly ? "/weekly" : isRated ? "/rated" : "/"
+      }
+    })
+  }
+
+  updateDisplay = () => {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        display: !prevState.display
       }
     })
   }
@@ -40,7 +51,6 @@ class Navbar extends React.Component {
         linkTo: "/rated"
       },
     ];
-    console.log("this.state.activelink ", this.state.activelink);
     return (
       <nav className="nav">
         <div className="nav-bar">
@@ -48,7 +58,8 @@ class Navbar extends React.Component {
             <img className='logo' src={logo} alt='logo' />
             <h1 className="label">Mooovies</h1>
           </Link>
-          <ul className='nav-ul'>
+          <img className='menu' src={menu} alt='menu' onClick={() => this.updateDisplay()}/>
+          <ul className={`nav-ul ${this.state.display && "show"}`}>
             {links.map(l => {
               const classLink = `nav-link ${this.state.activelink === l.linkTo ? "active" : "inactive"}`;
 
