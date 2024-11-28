@@ -44,7 +44,7 @@ class Navbar extends React.Component {
     return (
       <nav className="nav">
         <div className="nav-bar">
-          <Link className="nav-logo-label" to={"https://vercel.com/arkanya"} target='blank'>
+          <Link className="nav-logo-label" to={"https://github.com/AnthonyDWeb/mooovies"} target='blank'>
             <img className='logo' src={logo} alt='logo' />
             <h1 className="label">Mooovies</h1>
           </Link>
