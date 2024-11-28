@@ -24,7 +24,6 @@ export default class Weekly extends React.Component {
         fetch(`${process.env.REACT_APP_BASE_URL}${this.state.url}${process.env.REACT_APP_TMDB_API_KEY}`)
             .then(response => response.json())
             .then(myResult => {
-                console.log("données recus =>", myResult.results)
                 this.setState(prevState => {
                     return {
                         ...prevState,
@@ -35,7 +34,6 @@ export default class Weekly extends React.Component {
     }
 
     render() {
-        console.log("this.state.movies",this.state.movies);
         return (
             <div className="page">
                 {this.state.movies.map((m, index) =>

@@ -19,11 +19,9 @@ export default class Detail extends React.Component {
     getMovie = () => {
         const pathname = window.location.pathname;
         const url = `https://api.themoviedb.org/3${pathname}${process.env.REACT_APP_TMDB_API_KEY}`;
-        console.log("url", url);
         fetch(`https://api.themoviedb.org/3${pathname}${process.env.REACT_APP_TMDB_API_KEY}`)
             .then(response => response.json())
             .then(d => {
-                console.log("movie", d);
                 this.setState(prevState => {
                     return {
                         ...prevState,
@@ -37,7 +35,6 @@ export default class Detail extends React.Component {
         fetch(`https://api.themoviedb.org/3${pathname}/credits${process.env.REACT_APP_TMDB_API_KEY}`)
             .then(response => response.json())
             .then(c => {
-                console.log("movie credits", c);
                 this.setState(prevState => {
                     return {
                         ...prevState,

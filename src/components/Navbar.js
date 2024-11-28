@@ -63,7 +63,6 @@ class Navbar extends React.Component {
             {links.map(l => {
               const classLink = `nav-link ${this.state.activelink === l.linkTo ? "active" : "inactive"}`;
 
-              console.log("l.linkTo ", l.linkTo);
               return (
                 <li className='nav-li' key={l.label}>
                   <Link className={classLink} to={l.linkTo}>{l.label}</Link>
