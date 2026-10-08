@@ -18,7 +18,6 @@ export default class Detail extends React.Component {
 
     getMovie = () => {
         const pathname = window.location.pathname;
-        const url = `https://api.themoviedb.org/3${pathname}${process.env.REACT_APP_TMDB_API_KEY}`;
         fetch(`https://api.themoviedb.org/3${pathname}${process.env.REACT_APP_TMDB_API_KEY}`)
             .then(response => response.json())
             .then(d => {
