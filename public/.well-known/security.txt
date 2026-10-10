@@ -1,0 +1,4 @@
+Contact: mailto:contact@arkanya.fr
+Expires: 2027-10-10T15:51:26.912Z
+Preferred-Languages: fr, en
+Canonical: https://www.mooovies.arkanya.fr/.well-known/security.txt
